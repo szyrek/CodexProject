@@ -1,28 +1,12 @@
-# Codex Project Workflow
+# Codex Project Template
 
-This repository defines a multi-agent workflow orchestrated by Codex. The Orchestrator Agent dynamically assumes roles (Project Manager, Frontend, Backend, QA, etc.) to fulfill tasks.
+This repository serves as a starting point for new multi-agent projects. It contains a working example of the Codex workflow along with governance documentation.
 
-## Role Switching
-- The Orchestrator reviews each task and decides which role best fits.
-- Role switches are logged under `plans/YYYY-MM-DD_<role>.agent.md`.
-- See `AGENTS.md` for detailed rules.
+## Using this template
 
-Each role keeps its own `roles/<role>.work.md` file updated with insights during execution. Only the Orchestrator may edit other roles’ files or workflow documents, and roles must request such changes via a message file.
+1. **Create your new project repository.** You can either use GitHub's "Use this template" feature or clone this repo and push to a new remote.
+2. **Copy the contents of this template into your project.** Retain `WORKFLOW.md`, `AGENTS.md`, and the `docs/` directory so your project follows the same governance.
+3. **Replace project-specific sections.** Update `README.md` in your project to describe your own code and goals while keeping `WORKFLOW.md` for the shared process.
+4. **Customize roles and CI as needed.** Add or modify role files under `roles/` and update CI steps once your tooling is defined.
 
-## Agent Communication
-Task assignments are committed to the `plans/` directory. Agents exchange progress or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement.
-
-## Documentation and Governance
-- Workflow policies are recorded in `/docs/` as RFCs, ADRs, QA, and Security guidelines.
-- Any change to roles, CI, or docs must update both this README and `AGENTS.md` (dual-doc enforcement).
-- Completed work is summarized in `/docs/FEATURES.md` after the related plan files are removed.
-
-## Continuous Integration
-- CI uses GitHub Actions (`.github/workflows/ci.yml`).
-- Specific lint, test, and coverage steps are defined by project requirements gathered by the PM role.
-
-## Getting Started
-1. Review `AGENTS.md` to understand how roles are assumed.
-2. Consult `/roles/pm.hire.md` for the PM role’s onboarding instructions.
-3. Use the `/docs/` directory to track governance and security information.
-4. Review `/docs/FEATURES.md` for a history of completed work.
+Refer to `WORKFLOW.md` for details on how agents communicate and how tasks are orchestrated.
