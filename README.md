@@ -10,3 +10,7 @@ This repository serves as a starting point for new multi-agent projects. It cont
 4. **Customize roles and CI as needed.** Add or modify role files under `roles/` and update CI steps once your tooling is defined.
 
 Refer to `WORKFLOW.md` for details on how agents communicate and how tasks are orchestrated.
+
+## Version
+
+The current release is **0.0.1** as recorded in `VERSION.txt`. See `CHANGELOG.md` for details.
