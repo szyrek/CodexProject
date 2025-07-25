@@ -14,6 +14,12 @@ This file defines how Codex orchestrates roles within this repository.
 - Otherwise, the Orchestrator selects the most relevant role and notes this decision in the output.
 - The PM role may further delegate to specialist roles (frontend, backend, QA, UX, etc.).
 
+## Role Files and Insights
+- Each role maintains a file under `roles/<role>.work.md` to capture insights and lessons learned during execution.
+- Agents may only edit their own `<role>.work.md` file. Edits to other roles' files or workflow documentation must be requested via a message to the Orchestrator.
+- Role switching into the Orchestrator is disallowed. Only tasks that explicitly request the Orchestrator can start it.
+- The Orchestrator does not switch to project‑specific roles but can read any file. Its modifications are limited to workflow files and documentation.
+
 ## Communication Between Agents
 - Role assignments and task outlines are committed to `plans/YYYY-MM-DD_<role>.agent.md`.
 - Agents exchange progress updates or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`.
