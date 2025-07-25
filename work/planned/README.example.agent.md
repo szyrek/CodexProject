@@ -1,6 +1,6 @@
-# Plan File Example
+# Task File Example
 
-Plan files outline single tasks for agents. Each file name should follow `YYYY-MM-DD_<role>.agent.md`.
+Task files outline single pieces of work for agents. Each file name should follow `YYYY-MM-DD_<role>.agent.md`.
 Keep the description short so it can be pasted into the Codex web interface.
 
 Example contents:

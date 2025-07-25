@@ -4,21 +4,23 @@ This repository defines a multi-agent workflow orchestrated by Codex. The Orches
 
 ## Role Switching
 - The Orchestrator reviews each task and decides which role best fits.
-- Role switches are logged under `plans/YYYY-MM-DD_<role>.agent.md`.
+- New tasks are placed in `work/planned/YYYY-MM-DD_<role>.agent.md`.
 - See `AGENTS.md` for detailed rules.
 
 Each role keeps its own `roles/<role>.work.md` file updated with insights during execution. Only the Orchestrator may edit other roles’ files or workflow documents, and roles must request such changes via a message file.
 
 ## Agent Communication
-Task assignments are committed to the `plans/` directory. Agents exchange progress or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement. See `plans/EXAMPLE_YYYY-MM-DD_pm.agent.md` and `messages/EXAMPLE_YYYY-MM-DD_pm_to_orchestrator.md` for reference formats.
+Task assignments are committed to `work/planned/`. Agents exchange progress or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement. See `work/planned/EXAMPLE_YYYY-MM-DD_pm.agent.md` and `messages/EXAMPLE_YYYY-MM-DD_pm_to_orchestrator.md` for reference formats.
 
 ## Task Requests and Dependencies
-Each plan file contains a concise task description that can be pasted directly into the Codex web interface. Prefer small, single-responsibility tasks that one role can complete. When a task requires other tasks to finish first, add a `Dependencies:` section listing those prerequisites.
+Each task file contains a concise description that can be pasted directly into the Codex web interface. Prefer small, single-responsibility tasks that one role can complete. When a task requires other tasks to finish first, add a `Dependencies:` section listing those prerequisites.
+
+Tasks begin in `work/planned/`. When a role starts work it moves the task file to `work/in_progress/` to lock it. If the task needs help from another role, that role's tasks are created under `work/planned/` and the original file moves to `work/blocked/` with the blockers noted. Once all blockers are resolved, move the file back to `work/planned/` until it can be completed and placed in `work/completed/`.
 
 ## Documentation and Governance
 - Workflow policies are recorded in `/docs/` as RFCs, ADRs, QA, and Security guidelines.
 - Any change to roles, CI, or docs must update both `WORKFLOW.md` and `AGENTS.md` (dual-doc enforcement).
-- Completed work is summarized in `/docs/FEATURES.md` after the related plan files are removed.
+- Completed work is summarized in `/docs/FEATURES.md` after the corresponding task files are moved to `work/completed/`.
 
 ## Continuous Integration
 - CI uses GitHub Actions (`.github/workflows/ci.yml`).
