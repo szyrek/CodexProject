@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  orchestrator-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup environment
+        run: echo "Setup project-specific tools per AGENTS.md"
+      - name: Lint
+        run: echo "Run lint commands defined after requirements gathering"
+      - name: Test
+        run: echo "Run project tests"
+      - name: Coverage
+        run: echo "Check coverage >= 90% lines and 80% branches"
+      - name: Doc Parity
+        run: echo "Ensure README and AGENTS are updated"
