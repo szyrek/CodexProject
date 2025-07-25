@@ -12,6 +12,9 @@ Each role keeps its own `roles/<role>.work.md` file updated with insights during
 ## Agent Communication
 Task assignments are committed to the `plans/` directory. Agents exchange progress or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement.
 
+## Task Requests and Dependencies
+Each plan file contains a concise task description that can be pasted directly into the Codex web interface. Prefer small, single-responsibility tasks that one role can complete. When a task requires other tasks to finish first, add a `Dependencies:` section listing those prerequisites.
+
 ## Documentation and Governance
 - Workflow policies are recorded in `/docs/` as RFCs, ADRs, QA, and Security guidelines.
 - Any change to roles, CI, or docs must update both `WORKFLOW.md` and `AGENTS.md` (dual-doc enforcement).
