@@ -4,10 +4,11 @@ This file defines how Codex orchestrates roles within this repository.
 
 ## Orchestrator Responsibilities
 1. Examine each task and determine which role should handle it.
-2. Log each role switch under `plans/YYYY-MM-DD_<role>.agent.md`.
-3. Remove finished plan files and summarize the outcome in `docs/FEATURES.md`.
-4. Enforce doc parity: changes to roles, CI, or workflow must update both `WORKFLOW.md` and this file.
-5. Maintain CI configuration in `.github/workflows/ci.yml`.
+2. Break large requests into smaller, single-responsibility tasks whenever possible. Each task file should note any other tasks it depends on.
+3. Log each role switch under `plans/YYYY-MM-DD_<role>.agent.md`.
+4. Remove finished plan files and summarize the outcome in `docs/FEATURES.md`.
+5. Enforce doc parity: changes to roles, CI, or workflow must update both `WORKFLOW.md` and this file.
+6. Maintain CI configuration in `.github/workflows/ci.yml`.
 
 ## Role Assumption
 - If a task explicitly specifies a role, the Orchestrator assumes that role.
@@ -22,6 +23,7 @@ This file defines how Codex orchestrates roles within this repository.
 
 ## Communication Between Agents
 - Role assignments and task outlines are committed to `plans/YYYY-MM-DD_<role>.agent.md`.
+- Each of these plan files is a simple text task that can be pasted directly into the Codex interface. Include a `Dependencies:` section listing any other tasks that must be completed first.
 - Agents exchange progress updates or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`.
 - Responses may be appended to the same file or placed in a new dated file.
 - The Orchestrator reviews these message files to decide on further role switches.
