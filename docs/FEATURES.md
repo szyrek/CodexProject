@@ -6,3 +6,7 @@ This document records completed features after each task is fulfilled. Move the 
 - Initialized workflow scaffolding with CI template and governance documents.
 - Added persistent messaging system for inter-agent communication via files in `messages/`.
 - Added VERSION.txt with initial version 0.0.1.
+
+## 2025-07-26 - Version 0.0.2
+- Organized messages into `inbox/` and `read/` directories.
+- Roles move processed messages from inbox to read and reference prior messages in replies.

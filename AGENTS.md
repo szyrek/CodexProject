@@ -27,9 +27,10 @@ This file defines how Codex orchestrates roles within this repository.
 - Role assignments and task outlines are committed to `work/planned/YYYY-MM-DD_<role>.agent.md`.
 - Each of these task files is a short description that can be pasted directly into the Codex interface. Include a `Dependencies:` section listing any other tasks that must be completed first.
 - See `work/planned/README.example.agent.md` for a sample file illustrating the expected format.
-- Agents exchange progress updates or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`.
-- Responses may be appended to the same file or placed in a new dated file.
-- The Orchestrator reviews these message files to decide on further role switches.
+- Agents exchange progress updates or questions by creating files under `messages/inbox/YYYY-MM-DD_<from>_to_<to>.md`.
+- After a role responds or acts, it moves the message to `messages/read/`.
+- Follow-up messages should mention which earlier message they address.
+- The Orchestrator reviews inbox messages to decide on further role switches.
 - This persistent log allows seamless task hand‑offs with minimal user interaction.
 - When a role starts a task it moves the file from `work/planned/` to `work/in_progress/`.
 - If a task requires help from other roles, note those blockers inside the file, create the necessary tasks in `work/planned/`, and move the blocked task to `work/blocked/`.
