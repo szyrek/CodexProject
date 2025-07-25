@@ -19,4 +19,4 @@ jobs:
       - name: Coverage
         run: echo "Check coverage >= 90% lines and 80% branches"
       - name: Doc Parity
-        run: echo "Ensure README and AGENTS are updated"
+        run: echo "Ensure WORKFLOW and AGENTS are updated"
