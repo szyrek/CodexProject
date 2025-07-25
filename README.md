@@ -7,6 +7,8 @@ This repository defines a multi-agent workflow orchestrated by Codex. The Orches
 - Role switches are logged under `plans/YYYY-MM-DD_<role>.agent.md`.
 - See `AGENTS.md` for detailed rules.
 
+Each role keeps its own `roles/<role>.work.md` file updated with insights during execution. Only the Orchestrator may edit other roles’ files or workflow documents, and roles must request such changes via a message file.
+
 ## Agent Communication
 Task assignments are committed to the `plans/` directory. Agents exchange progress or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement.
 
