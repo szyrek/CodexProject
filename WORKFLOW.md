@@ -23,6 +23,7 @@ Each plan file contains a concise task description that can be pasted directly i
 ## Continuous Integration
 - CI uses GitHub Actions (`.github/workflows/ci.yml`).
 - Specific lint, test, and coverage steps are defined by project requirements gathered by the PM role.
+- A doc parity check runs `scripts/doc_parity_check.sh` to ensure updates to roles or CI also modify both docs.
 
 ## Getting Started
 1. Review `AGENTS.md` to understand how roles are assumed.

@@ -9,6 +9,7 @@ This file defines how Codex orchestrates roles within this repository.
 4. Remove finished plan files and summarize the outcome in `docs/FEATURES.md`.
 5. Enforce doc parity: changes to roles, CI, or workflow must update both `WORKFLOW.md` and this file.
 6. Maintain CI configuration in `.github/workflows/ci.yml`.
+7. The CI pipeline runs `scripts/doc_parity_check.sh` to verify doc parity.
 
 ## Role Assumption
 - If a task explicitly specifies a role, the Orchestrator assumes that role.
