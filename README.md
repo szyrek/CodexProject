@@ -9,8 +9,8 @@ This repository serves as a starting point for new multi-agent projects. It cont
 3. **Replace project-specific sections.** Update `README.md` in your project to describe your own code and goals while keeping `WORKFLOW.md` for the shared process.
 4. **Customize roles and CI as needed.** Add or modify role files under `roles/` and update CI steps once your tooling is defined.
 
-Refer to `WORKFLOW.md` for details on how agents communicate and how tasks are orchestrated.
+Refer to `WORKFLOW.md` for details on how agents communicate and how tasks are orchestrated. Example task and message files in `work/planned/` and `messages/inbox/` demonstrate the expected format. They are placeholders and do not represent active work.
 
 ## Version
 
-The current release is **0.0.1** as recorded in `VERSION.txt`. See `CHANGELOG.md` for details.
+The current release is **0.0.2** as recorded in `VERSION.txt`. See `CHANGELOG.md` for details.
