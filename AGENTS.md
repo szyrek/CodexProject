@@ -5,13 +5,21 @@ This file defines how Codex orchestrates roles within this repository.
 ## Orchestrator Responsibilities
 1. Examine each task and determine which role should handle it.
 2. Log each role switch under `plans/YYYY-MM-DD_<role>.agent.md`.
-3. Enforce doc parity: changes to roles, CI, or workflow must update both `README.md` and this file.
-4. Maintain CI configuration in `.github/workflows/ci.yml`.
+3. Remove finished plan files and summarize the outcome in `docs/FEATURES.md`.
+4. Enforce doc parity: changes to roles, CI, or workflow must update both `README.md` and this file.
+5. Maintain CI configuration in `.github/workflows/ci.yml`.
 
 ## Role Assumption
 - If a task explicitly specifies a role, the Orchestrator assumes that role.
 - Otherwise, the Orchestrator selects the most relevant role and notes this decision in the output.
 - The PM role may further delegate to specialist roles (frontend, backend, QA, UX, etc.).
+
+## Communication Between Agents
+- Role assignments and task outlines are committed to `plans/YYYY-MM-DD_<role>.agent.md`.
+- Agents exchange progress updates or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`.
+- Responses may be appended to the same file or placed in a new dated file.
+- The Orchestrator reviews these message files to decide on further role switches.
+- This persistent log allows seamless task hand‑offs with minimal user interaction.
 
 ## Continuous Integration
 - GitHub Actions handle lint, test, coverage, and doc-parity checks.
@@ -24,5 +32,6 @@ This file defines how Codex orchestrates roles within this repository.
 - `/docs/QA/` for bug reports and test strategies.
 - `/docs/SECURITY/` for threat models and mitigations.
 - `GLOSSARY.md` for terminology.
+- `/docs/FEATURES.md` for a running list of completed work.
 
 This AGENTS.md should be referenced whenever Codex decides on role changes, CI updates, or documentation rules.

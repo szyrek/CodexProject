@@ -7,9 +7,13 @@ This repository defines a multi-agent workflow orchestrated by Codex. The Orches
 - Role switches are logged under `plans/YYYY-MM-DD_<role>.agent.md`.
 - See `AGENTS.md` for detailed rules.
 
+## Agent Communication
+Task assignments are committed to the `plans/` directory. Agents exchange progress or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement.
+
 ## Documentation and Governance
 - Workflow policies are recorded in `/docs/` as RFCs, ADRs, QA, and Security guidelines.
 - Any change to roles, CI, or docs must update both this README and `AGENTS.md` (dual-doc enforcement).
+- Completed work is summarized in `/docs/FEATURES.md` after the related plan files are removed.
 
 ## Continuous Integration
 - CI uses GitHub Actions (`.github/workflows/ci.yml`).
@@ -19,3 +23,4 @@ This repository defines a multi-agent workflow orchestrated by Codex. The Orches
 1. Review `AGENTS.md` to understand how roles are assumed.
 2. Consult `/roles/pm.hire.md` for the PM role’s onboarding instructions.
 3. Use the `/docs/` directory to track governance and security information.
+4. Review `/docs/FEATURES.md` for a history of completed work.
