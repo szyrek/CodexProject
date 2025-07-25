@@ -5,11 +5,12 @@ This file defines how Codex orchestrates roles within this repository.
 ## Orchestrator Responsibilities
 1. Examine each task and determine which role should handle it.
 2. Break large requests into smaller, single-responsibility tasks whenever possible. Each task file should note any other tasks it depends on.
-3. Log each role switch under `plans/YYYY-MM-DD_<role>.agent.md`.
-4. Remove finished plan files and summarize the outcome in `docs/FEATURES.md`.
-5. Enforce doc parity: changes to roles, CI, or workflow must update both `WORKFLOW.md` and this file.
-6. Maintain CI configuration in `.github/workflows/ci.yml`.
-7. The CI pipeline runs `scripts/doc_parity_check.sh` to verify doc parity.
+3. Log each new task under `work/planned/YYYY-MM-DD_<role>.agent.md`.
+4. Move a task to `work/in_progress/` when a role begins work. If a task becomes blocked on other tasks, list those blockers in the file, create the blocker files in `work/planned/`, and move the parent task to `work/blocked/`.
+5. When a task is complete, move its file to `work/completed/` and summarize the outcome in `docs/FEATURES.md`.
+6. Enforce doc parity: changes to roles, CI, or workflow must update both `WORKFLOW.md` and this file.
+7. Maintain CI configuration in `.github/workflows/ci.yml`.
+8. The CI pipeline runs `scripts/doc_parity_check.sh` to verify doc parity.
 
 ## Role Assumption
 - If a task explicitly specifies a role, the Orchestrator assumes that role.
@@ -23,13 +24,16 @@ This file defines how Codex orchestrates roles within this repository.
 - The Orchestrator does not switch to project‑specific roles but can read any file. Its modifications are limited to workflow files and documentation.
 
 ## Communication Between Agents
-- Role assignments and task outlines are committed to `plans/YYYY-MM-DD_<role>.agent.md`.
-- Each of these plan files is a simple text task that can be pasted directly into the Codex interface. Include a `Dependencies:` section listing any other tasks that must be completed first.
-- See `plans/README.example.agent.md` for a sample plan illustrating the expected format.
+- Role assignments and task outlines are committed to `work/planned/YYYY-MM-DD_<role>.agent.md`.
+- Each of these task files is a short description that can be pasted directly into the Codex interface. Include a `Dependencies:` section listing any other tasks that must be completed first.
+- See `work/planned/README.example.agent.md` for a sample file illustrating the expected format.
 - Agents exchange progress updates or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`.
 - Responses may be appended to the same file or placed in a new dated file.
 - The Orchestrator reviews these message files to decide on further role switches.
 - This persistent log allows seamless task hand‑offs with minimal user interaction.
+- When a role starts a task it moves the file from `work/planned/` to `work/in_progress/`.
+- If a task requires help from other roles, note those blockers inside the file, create the necessary tasks in `work/planned/`, and move the blocked task to `work/blocked/`.
+- Roles should mark blockers resolved when completing their tasks. If the last blocker for a task is cleared, move that task back to `work/planned/`.
 
 ## Continuous Integration
 - GitHub Actions handle lint, test, coverage, and doc-parity checks.
