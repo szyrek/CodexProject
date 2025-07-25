@@ -5,7 +5,7 @@ This repository serves as a starting point for new multi-agent projects. It cont
 ## Using this template
 
 1. **Create your new project repository.** You can either use GitHub's "Use this template" feature or clone this repo and push to a new remote.
-2. **Copy the contents of this template into your project.** Retain `WORKFLOW.md`, `AGENTS.md`, and the `docs/` directory so your project follows the same governance.
+2. **Copy the contents of this template into your project.** Run `scripts/bootstrap.sh <path>` for a quick setup or copy the files manually. Retain `WORKFLOW.md`, `AGENTS.md`, and the `docs/` directory so your project follows the same governance.
 3. **Replace project-specific sections.** Update `README.md` in your project to describe your own code and goals while keeping `WORKFLOW.md` for the shared process.
 4. **Customize roles and CI as needed.** Add or modify role files under `roles/` and update CI steps once your tooling is defined.
 
