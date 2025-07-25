@@ -7,7 +7,7 @@ This repository defines a multi-agent workflow orchestrated by Codex. The Orches
 - New tasks are placed in `work/planned/YYYY-MM-DD_<role>.agent.md`.
 - See `AGENTS.md` for detailed rules.
 
-Each role keeps its own `roles/<role>.work.md` file updated with insights during execution. Only the Orchestrator may edit other roles’ files or workflow documents, and roles must request such changes via a message file.
+Each role keeps its own `roles/hired/<role>.md` file updated with insights during execution. Only the Orchestrator may edit other roles’ files or workflow documents, and roles must request such changes via a message file.
 
 ## Agent Communication
 Task assignments are committed to `work/planned/`. Agents exchange progress or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement. See `work/planned/EXAMPLE_YYYY-MM-DD_pm.agent.md` and `messages/EXAMPLE_YYYY-MM-DD_pm_to_orchestrator.md` for reference formats.
@@ -29,6 +29,6 @@ Tasks begin in `work/planned/`. When a role starts work it moves the task file t
 
 ## Getting Started
 1. Review `AGENTS.md` to understand how roles are assumed.
-2. Consult `/roles/pm.hire.md` for the PM role’s onboarding instructions.
+2. Consult `/roles/request/pm.md` for the PM role’s onboarding instructions.
 3. Use the `/docs/` directory to track governance and security information.
 4. Review `/docs/FEATURES.md` for a history of completed work.
