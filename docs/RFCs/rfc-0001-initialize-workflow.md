@@ -7,7 +7,7 @@ Establish the initial multi-agent workflow, governance files, and CI structure.
 Provide a consistent process for Codex to manage role assumptions, documentation, and continuous integration.
 
 ## Guide-level Explanation
-- Create `README.md` and `AGENTS.md` to document workflow rules.
+- Create `WORKFLOW.md` and `AGENTS.md` to document workflow rules.
 - Seed `/docs/` with placeholders for RFCs, ADRs, QA, Security, and Glossary.
 - Configure GitHub Actions for lint, test, coverage, and doc parity checks.
 - Introduce the PM role via `/roles/pm.hire.md`.

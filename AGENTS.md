@@ -6,7 +6,7 @@ This file defines how Codex orchestrates roles within this repository.
 1. Examine each task and determine which role should handle it.
 2. Log each role switch under `plans/YYYY-MM-DD_<role>.agent.md`.
 3. Remove finished plan files and summarize the outcome in `docs/FEATURES.md`.
-4. Enforce doc parity: changes to roles, CI, or workflow must update both `README.md` and this file.
+4. Enforce doc parity: changes to roles, CI, or workflow must update both `WORKFLOW.md` and this file.
 5. Maintain CI configuration in `.github/workflows/ci.yml`.
 
 ## Role Assumption
