@@ -19,4 +19,4 @@ jobs:
       - name: Coverage
         run: echo "Check coverage >= 90% lines and 80% branches"
       - name: Doc Parity
-        run: echo "Ensure WORKFLOW and AGENTS are updated"
+        run: ./scripts/doc_parity_check.sh
