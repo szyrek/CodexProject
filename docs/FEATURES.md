@@ -10,3 +10,6 @@ This document records completed features after each task is fulfilled. Move the 
 ## 2025-07-26 - Version 0.0.2
 - Organized messages into `inbox/` and `read/` directories.
 - Roles move processed messages from inbox to read and reference prior messages in replies.
+
+## 2025-07-27 - Version 0.0.3
+- Added `scripts/bootstrap.sh` for easy setup of new Codex projects.
