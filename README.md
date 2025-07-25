@@ -13,4 +13,4 @@ Refer to `WORKFLOW.md` for details on how agents communicate and how tasks are o
 
 ## Version
 
-The current release is **0.0.2** as recorded in `VERSION.txt`. See `CHANGELOG.md` for details.
+The current release is **0.0.3** as recorded in `VERSION.txt`. See `CHANGELOG.md` for details.
