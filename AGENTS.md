@@ -24,6 +24,7 @@ This file defines how Codex orchestrates roles within this repository.
 ## Communication Between Agents
 - Role assignments and task outlines are committed to `plans/YYYY-MM-DD_<role>.agent.md`.
 - Each of these plan files is a simple text task that can be pasted directly into the Codex interface. Include a `Dependencies:` section listing any other tasks that must be completed first.
+- See `plans/README.example.agent.md` for a sample plan illustrating the expected format.
 - Agents exchange progress updates or questions in `messages/YYYY-MM-DD_<from>_to_<to>.md`.
 - Responses may be appended to the same file or placed in a new dated file.
 - The Orchestrator reviews these message files to decide on further role switches.
