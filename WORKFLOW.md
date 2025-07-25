@@ -1,16 +1,16 @@
 # Codex Project Workflow
 
-This repository defines a multi-agent workflow orchestrated by Codex. The Orchestrator Agent dynamically assumes roles (Project Manager, Frontend, Backend, QA, etc.) to fulfill tasks.
+This repository defines a multi-agent workflow orchestrated by Codex. The Orchestrator dynamically assumes roles (Project Manager, Frontend, Backend, QA, etc.) to fulfill tasks.
 
 ## Role Switching
 - The Orchestrator reviews each task and decides which role best fits.
 - New tasks are placed in `work/planned/YYYY-MM-DD_<role>.agent.md`.
 - See `AGENTS.md` for detailed rules.
 
-Each role sources its role file at the start of work. When the Orchestrator defines a new role it writes the initial preprompt to `roles/request/<role>.md`. The first time that role runs, it completes an onboarding review of the entire project, refines its description with any insights, appends those notes as initial memories, and then moves the file to `roles/hired/<role>.md`. Only the Orchestrator may edit other roles’ files or workflow documents, and roles must request such changes via a message file.
+Each role sources its role file at the start of work. New roles begin in `roles/request/` and, after onboarding, move to `roles/hired/` with any insights appended. Only the Orchestrator may edit other roles’ files or workflow documents; roles must request such changes via a message file.
 
 ## Agent Communication
-Task assignments are committed to `work/planned/`. Agents leave messages for one another in `messages/inbox/YYYY-MM-DD_<from>_to_<to>.md`. After responding, the recipient moves the file to `messages/read/`. Each reply should note which previous message it addresses. These files provide a persistent record so the Orchestrator can seamlessly switch roles with minimal user involvement. See `work/planned/EXAMPLE_YYYY-MM-DD_pm.agent.md` and `messages/inbox/EXAMPLE_YYYY-MM-DD_pm_to_orchestrator.md` for reference formats.
+Task assignments are committed to `work/planned/`. Agents leave messages for one another in `messages/inbox/YYYY-MM-DD_<from>_to_<to>.md` and move them to `messages/read/` after responding. Each reply notes which previous message it addresses. See the example files in those folders for the exact format; they are placeholders only.
 
 ## Task Requests and Dependencies
 Each task file contains a concise description that can be pasted directly into the Codex web interface. Prefer small, single-responsibility tasks that one role can complete. When a task requires other tasks to finish first, add a `Dependencies:` section listing those prerequisites.
