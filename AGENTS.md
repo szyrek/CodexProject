@@ -18,7 +18,9 @@ This file defines how Codex orchestrates roles within this repository.
 - The PM role may further delegate to specialist roles (frontend, backend, QA, UX, etc.).
 
 ## Role Files and Insights
-- Each role maintains a file under `roles/hired/<role>.md` to capture insights and lessons learned during execution.
+- New role proposals live under `roles/request/` until the Orchestrator approves them.
+- Approved roles are moved to `roles/hired/<role>.md` and each file stores the role preprompt.
+- Agents append additional insights to their own file as they gain experience.
 - Agents may only edit their own `roles/hired/<role>.md` file. Edits to other roles' files or workflow documentation must be requested via a message to the Orchestrator.
 - Role switching into the Orchestrator is disallowed. Only tasks that explicitly request the Orchestrator can start it.
 - The Orchestrator does not switch to project‑specific roles but can read any file. Its modifications are limited to workflow files and documentation.
