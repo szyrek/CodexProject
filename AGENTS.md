@@ -1,40 +1,25 @@
-# AGENTS Governance
+# Guidance for AI Coding Agents
 
-This file defines how Codex orchestrates roles within this repository. For the step-by-step task flow, see `WORKFLOW.md`.
+## Quick Reference
+The condensed rules are stored in `doc/FAST_GUIDANCE.md`. Use that file when asked to
+"be brief". It summarizes the workflow so you can recall it quickly. Review the
+full documentation if anything is unclear or when the docs change.
 
-## Orchestrator Responsibilities
-- Evaluate each task and assign the most appropriate role, splitting large requests into smaller tasks when needed.
-- Log new tasks under `work/planned/YYYY-MM-DD_<role>.agent.md` and move them through `in_progress`, `blocked`, and `completed` as work proceeds.
-- Summarize completed tasks in `docs/FEATURES.md`.
-- Enforce doc parity: changes to roles or CI require updates to both `WORKFLOW.md` and this file.
-- Maintain CI configuration in `.github/workflows/ci.yml` and run `scripts/doc_parity_check.sh`.
+Welcome, coding agent! Follow these instructions whenever you work in this repository:
 
-## Role Assumption
-- If a task names a role, the Orchestrator assumes it; otherwise it selects the best fit.
-- The PM may delegate to specialist roles as needed.
+1. **Read Documentation**
+   - Review the local `CODEX.md` (or `README.md`) and `AGENTS.md` and then those in parent folders.
+   - Consult [`doc/practices`](doc/practices/) for guides on testing, features, bug fixes and refactoring.
+   - Skim `doc/bugfix/` for context when planning new work.
+   - For UI tasks read [`doc/practices/UI.md`](doc/practices/UI.md).
+2. **Comply with the Workflow**
+   - Follow the standards defined in [`doc/practices/CODING_RULES.md`](doc/practices/CODING_RULES.md).
+   - Format commit messages according to [`doc/practices/COMMIT_MESSAGE.md`](doc/practices/COMMIT_MESSAGE.md).
+   - Write tests before implementing any change and ensure they all pass.
+3. **Maintain Local Instructions**
+   - Some folders include their own `AGENTS.md` with notes specific to that location. Keep these files short and link back here rather than repeating the entire workflow. If present, read them before editing files in that folder.
 
-## Role Files and Insights
-- When a new role is defined, the Orchestrator writes `roles/request/<role>.md` with its preprompt.
-- After onboarding the role moves to `roles/hired/<role>.md` and appends insights over time.
-- Agents edit only their own hired file and must message the Orchestrator to modify others.
-- Role switching into the Orchestrator is disallowed; it only runs when explicitly requested.
-- The Orchestrator may read any file but only edits workflow docs and governance files.
+These practices must not be altered without explicit approval. Raise concerns rather than modifying them silently.
 
-## Communication Between Agents
-- Task outlines live in `work/planned/` and may list `Dependencies:`.
-- Agents communicate via files in `messages/inbox/`, moving them to `messages/read/` after handling.
-- Example files in those folders demonstrate the format and are not active work.
-
-## Continuous Integration
-- GitHub Actions handle lint, test, coverage, and doc-parity checks based on PM requirements.
-- Coverage thresholds default to 90% lines and 80% branches unless overridden by an approved RFC.
-
-## Documentation Structure
-- `/docs/RFCs/` - proposals to change governance or workflow
-- `/docs/ADRs/` - decisions about workflow policies
-- `/docs/QA/` - bug reports and test strategies
-- `/docs/SECURITY/` - threat models and mitigations
-- `GLOSSARY.md` - terminology
-- `/docs/FEATURES.md` - running list of completed work
-
-This AGENTS.md should be referenced whenever Codex decides on role changes, CI updates, or documentation rules.
+## Environment Note
+Common setup or runtime problems are tracked in [doc/KNOWN_ISSUES.md](doc/KNOWN_ISSUES.md). Check that file if anything fails unexpectedly.
