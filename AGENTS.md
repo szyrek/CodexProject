@@ -11,7 +11,6 @@ Welcome, coding agent! Follow these instructions whenever you work in this repos
    - Review the local `CODEX.md` (or `README.md`) and `AGENTS.md` and then those in parent folders.
    - Consult [`doc/practices`](doc/practices/) for guides on testing, features, bug fixes and refactoring.
    - Skim `doc/bugfix/` for context when planning new work.
-   - For UI tasks read [`doc/practices/UI.md`](doc/practices/UI.md).
 2. **Comply with the Workflow**
    - Follow the standards defined in [`doc/practices/CODING_RULES.md`](doc/practices/CODING_RULES.md).
    - Format commit messages according to [`doc/practices/COMMIT_MESSAGE.md`](doc/practices/COMMIT_MESSAGE.md).

@@ -4,7 +4,6 @@ Welcome to Codex2! This repository is scaffolded using **documentation-driven de
 
 - `README.md` explains the purpose of the code within its folder and links to any additional documentation. Add one only when the folder introduces concepts not documented elsewhere.
 - `AGENTS.md` provides AI-specific guidance for contributing safely and consistently. Include it only when a folder needs extra notes and always link back to `/AGENTS.md` for the full workflow.
-- For any UI work consult [`doc/practices/UI.md`](doc/practices/UI.md) for design guidelines.
 - Known setup problems are collected in [doc/KNOWN_ISSUES.md](doc/KNOWN_ISSUES.md).
 
 A detailed workflow for all contributors is defined in [`doc/practices/CODING_RULES.md`](doc/practices/CODING_RULES.md). Core practices such as testing, feature work, bug fixing and refactoring are documented in the [`doc/practices/`](doc/practices/) folder. You should read those guidelines, including the commit message rules in [`doc/practices/COMMIT_MESSAGE.md`](doc/practices/COMMIT_MESSAGE.md), before proposing any changes. Further design or architecture notes may appear in other Markdown files, and they will be referenced from the local `README.md` and `AGENTS.md`.

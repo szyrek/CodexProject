@@ -11,8 +11,4 @@ This file distills the core practices for quick reference.
 - Skim doc/bugfix for context when planning new features.
 - Update documentation and tests whenever behavior changes.
 
-## UI Guidelines
-- Keep interfaces simple and consistent.
-- Provide feedback and ensure accessibility.
-
 Use this summary when asked to "be brief". Consult the full docs if any detail is unclear.
