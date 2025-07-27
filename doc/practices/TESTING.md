@@ -11,8 +11,7 @@ This repository follows a test-driven approach. Every feature begins with tests 
 - Modules that collaborate should have integration tests verifying interactions.
 
 ## End-to-End Tests
-- For each defined user-facing feature we provide a browser-based test to validate behavior in the real application.
-- Playwright is used for E2E testing in web projects.
+These are optional for user-facing features when applicable.
 
 ## Performance Tests
 - Benchmarks use a `bench` runner.

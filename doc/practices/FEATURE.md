@@ -14,7 +14,6 @@ When introducing a new feature, follow these principles:
    - links to relevant commits and architectural documents
    - changelog entries
    - Update any affected architecture docs and reference this feature folder from them.
-   - If the feature changes the UI, review the guidelines in [UI Design Best Practices](UI.md).
 3. **Review Past Bug Fixes**
    - Browse `../bugfix/` for records related to your changes.
    - Incorporate regression tests covering those failure cases.

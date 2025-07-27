@@ -8,7 +8,6 @@ This folder collects the documentation that defines how we work. For a one-page 
 - [Adding Features](FEATURE.md)
 - [Fixing Bugs](BUGFIX.md)
 - [Refactoring](REFACTORING.md)
-- [UI Design Best Practices](UI.md)
 - [Known Issues](../KNOWN_ISSUES.md)
 
 Past bug fixes contain lessons. Scan the entries under `doc/bugfix` when planning features or refactors.
