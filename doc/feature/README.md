@@ -8,4 +8,4 @@ Create a folder here for each significant feature. Document:
 
 ## Implemented Features
 
-This section will list features as they are developed.
+- [Test Project](test_project/README.md): sample tasks and tests for Codex
